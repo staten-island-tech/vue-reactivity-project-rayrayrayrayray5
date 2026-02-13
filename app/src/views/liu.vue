@@ -1,11 +1,12 @@
 <template>
-    <div>
-        
+    <div class="container">
+        <h1>make your froyo bowl</h1>
     </div>
 </template>
 
 <script setup>
 import {ref} from 'vue'
+import FroyoCard from '@/components/froyocard.vue'
 const flavor = ref([
   { flavor: "Vanilla", cost: 4.50 },
   { flavor: "Chocolate", cost: 4.75 },
