@@ -1,13 +1,14 @@
 <template>
     <div class="container">
-        <h1>make your froyo bowl</h1>
+        <FroyoCard v-for="froyo in flavorlist" :key="froyo.flavor" :froyo="froyo"
+        />
     </div>
 </template>
 
 <script setup>
 import {ref} from 'vue'
-import FroyoCard from '@/components/froyocard.vue'
-const flavor = ref([
+import FroyoCard from '@/components/froyocard.vue';
+const flavorlist = ref([
   { flavor: "Vanilla", cost: 4.50 },
   { flavor: "Chocolate", cost: 4.75 },
   { flavor: "Strawberry", cost: 4.75 },
@@ -37,5 +38,25 @@ const flavor = ref([
 </script>
 
 <style scoped>
+.container {
+  display: flex;
+  width: 80vw;
+  margin: 20px auto;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  border: 1px solid #ccc;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
 
 </style>
