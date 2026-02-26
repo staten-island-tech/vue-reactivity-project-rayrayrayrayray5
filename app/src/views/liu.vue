@@ -12,15 +12,12 @@ const flavorlist = ref([
   { flavor: "Chocolate", cost: 4.75 },
   { flavor: "Strawberry", cost: 4.75 },
   { flavor: "Mango", cost: 5.00 },
-  { flavor: "Blueberry", cost: 5.00 },
   { flavor: "Cookies & Cream", cost: 5.25 },
   { flavor: "Mint", cost: 4.75 },
   { flavor: "Peach", cost: 5.00 },
   { flavor: "Pistachio", cost: 5.50 },
-  { flavor: "Salted Caramel", cost: 5.25 },
   { flavor: "Raspberry", cost: 5.00 },
   { flavor: "Pineapple", cost: 5.00 },
-  { flavor: "Green Tea", cost: 5.25 },
   { flavor: "Red Velvet", cost: 5.50 },
   { flavor: "Coffee", cost: 5.00 },
   { flavor: "Banana", cost: 4.75 },
@@ -29,10 +26,20 @@ const flavorlist = ref([
   { flavor: "Cherry", cost: 5.00 },
   { flavor: "Cotton Candy", cost: 5.25 },
   { flavor: "Birthday Cake", cost: 5.50 },
-  { flavor: "Honeydew", cost: 5.00 },
   { flavor: "Taro", cost: 5.50 },
   { flavor: "Matcha Swirl", cost: 5.75 },
-  { flavor: "Brownie Batter", cost: 5.75 }
+  { flavor: "Sprinkles", cost: 0.50 },
+  { flavor: "Chocolate Chips", cost: 0.75 },
+  { flavor: "Cookie Crumbles", cost: 0.85 },
+  { flavor: "Gummy Bears", cost: 0.70 },
+  { flavor: "Marshmallows", cost: 0.65 },
+  { flavor: "Strawberries", cost: 0.90 },
+  { flavor: "Blueberries", cost: 0.90 },
+  { flavor: "Banana Slices", cost: 0.80 },
+  { flavor: "Caramel Drizzle", cost: 0.75 },
+  { flavor: "Hot Fudge", cost: 0.85 },
+  { flavor: "Whipped Cream", cost: 0.60 },
+  { flavor: "Crushed Oreos", cost: 0.95 }
 ])
 </script>
 
@@ -63,6 +70,7 @@ h1 {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  background-color: aqua;
 }
 
 </style>
