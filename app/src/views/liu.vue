@@ -1,45 +1,50 @@
 <template>
     <div class="container">
-        <FroyoCard v-for="froyo in flavorlist" :key="froyo.flavor" :froyo="froyo"></FroyoCard>
+        <FroyoCard @click="addToFroyo(froyo)" v-for="froyo in flavorlist" :key="froyo.flavor" :froyo="froyo">
+          <button>Add To Froyo</button>
+        </FroyoCard>
     </div>
 </template>
 
 <script setup>
 import {ref} from 'vue'
+function addToFroyo(item){
+  console.log(item)
+}
 import FroyoCard from '@/components/froyocard.vue';
 const flavorlist = ref([
-  { flavor: "Vanilla", cost: 4.50 },
-  { flavor: "Chocolate", cost: 4.75 },
-  { flavor: "Strawberry", cost: 4.75 },
-  { flavor: "Mango", cost: 5.00 },
-  { flavor: "Cookies & Cream", cost: 5.25 },
-  { flavor: "Mint", cost: 4.75 },
-  { flavor: "Peach", cost: 5.00 },
-  { flavor: "Pistachio", cost: 5.50 },
-  { flavor: "Raspberry", cost: 5.00 },
-  { flavor: "Pineapple", cost: 5.00 },
-  { flavor: "Red Velvet", cost: 5.50 },
-  { flavor: "Coffee", cost: 5.00 },
-  { flavor: "Banana", cost: 4.75 },
-  { flavor: "Coconut", cost: 5.25 },
-  { flavor: "Lemon", cost: 4.75 },
-  { flavor: "Cherry", cost: 5.00 },
-  { flavor: "Cotton Candy", cost: 5.25 },
-  { flavor: "Birthday Cake", cost: 5.50 },
-  { flavor: "Taro", cost: 5.50 },
-  { flavor: "Matcha Swirl", cost: 5.75 },
-  { flavor: "Sprinkles", cost: 0.50 },
-  { flavor: "Chocolate Chips", cost: 0.75 },
-  { flavor: "Cookie Crumbles", cost: 0.85 },
-  { flavor: "Gummy Bears", cost: 0.70 },
-  { flavor: "Marshmallows", cost: 0.65 },
-  { flavor: "Strawberries", cost: 0.90 },
-  { flavor: "Blueberries", cost: 0.90 },
-  { flavor: "Banana Slices", cost: 0.80 },
-  { flavor: "Caramel Drizzle", cost: 0.75 },
-  { flavor: "Hot Fudge", cost: 0.85 },
-  { flavor: "Whipped Cream", cost: 0.60 },
-  { flavor: "Crushed Oreos", cost: 0.95 }
+  { flavor: "Vanilla", cost: 4.50, type: "cream" },
+  { flavor: "Chocolate", cost: 4.75, type: "cream" },
+  { flavor: "Strawberry", cost: 4.75, type: "cream" },
+  { flavor: "Mango", cost: 5.00, type: "cream" },
+  { flavor: "Cookies & Cream", cost: 5.25, type: "cream" },
+  { flavor: "Mint", cost: 4.75, type: "cream" },
+  { flavor: "Peach", cost: 5.00, type: "cream" },
+  { flavor: "Pistachio", cost: 5.50, type: "cream" },
+  { flavor: "Raspberry", cost: 5.00, type: "cream" },
+  { flavor: "Pineapple", cost: 5.00, type: "cream" },
+  { flavor: "Red Velvet", cost: 5.50, type: "cream" },
+  { flavor: "Coffee", cost: 5.00, type: "cream" },
+  { flavor: "Banana", cost: 4.75, type: "cream" },
+  { flavor: "Coconut", cost: 5.25, type: "cream" },
+  { flavor: "Lemon", cost: 4.75, type: "cream" },
+  { flavor: "Cherry", cost: 5.00, type: "cream" },
+  { flavor: "Cotton Candy", cost: 5.25, type: "cream" },
+  { flavor: "Birthday Cake", cost: 5.50, type: "cream" },
+  { flavor: "Taro", cost: 5.50, type: "cream" },
+  { flavor: "Matcha Swirl", cost: 5.75, type: "cream" },
+  { flavor: "Sprinkles", cost: 0.50, type: "topping" },
+  { flavor: "Chocolate Chips", cost: 0.75, type: "topping" },
+  { flavor: "Cookie Crumbles", cost: 0.85, type: "topping" },
+  { flavor: "Gummy Bears", cost: 0.70, type: "topping" },
+  { flavor: "Marshmallows", cost: 0.65, type: "topping" },
+  { flavor: "Strawberries", cost: 0.90, type: "topping" },
+  { flavor: "Blueberries", cost: 0.90, type: "topping" },
+  { flavor: "Banana Slices", cost: 0.80, type: "topping" },
+  { flavor: "Caramel Drizzle", cost: 0.75, type: "topping" },
+  { flavor: "Hot Fudge", cost: 0.85, type: "topping" },
+  { flavor: "Whipped Cream", cost: 0.60, type: "topping" },
+  { flavor: "Crushed Oreos", cost: 0.95, type: "topping" }
 ])
 </script>
 
@@ -70,7 +75,6 @@ h1 {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  background-color: aqua;
 }
 
 </style>

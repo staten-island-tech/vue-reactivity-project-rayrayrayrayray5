@@ -2,7 +2,7 @@
     <div>
         <h2>{{ froyo.flavor }}</h2>
         <h3>${{ froyo.cost.toFixed(2) }}</h3>
-        <button>Add</button>
+        <slot></slot>
     </div>
 </template>
 
@@ -23,6 +23,7 @@ div{
     align-items: center;
     height: 200px;
     width: 150px;
-    border: 3px solid black;
+    border: 3px solid rgb(230, 170, 6);
+    background-color: rgb(255, 220, 155);
 }
 </style>
