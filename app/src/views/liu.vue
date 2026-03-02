@@ -3,15 +3,20 @@
         <FroyoCard @click="addToFroyo(froyo)" v-for="froyo in flavorlist" :key="froyo.flavor" :froyo="froyo">
           <button>Add To Froyo</button>
         </FroyoCard>
+        <CartCard></CartCard>
     </div>
 </template>
 
 <script setup>
 import {ref} from 'vue'
+let cost = 0
 function addToFroyo(item){
-  console.log(item)
+  cost += item.cost
+  console.log(item, cost.toFixed(2))
 }
 import FroyoCard from '@/components/froyocard.vue';
+import CartCard from '@/components/cart.vue';
+
 const flavorlist = ref([
   { flavor: "Vanilla", cost: 4.50, type: "cream" },
   { flavor: "Chocolate", cost: 4.75, type: "cream" },
@@ -76,5 +81,7 @@ h1 {
   justify-content: space-around;
   align-items: center;
 }
-
+button{
+  background-color: beige;
+}
 </style>
