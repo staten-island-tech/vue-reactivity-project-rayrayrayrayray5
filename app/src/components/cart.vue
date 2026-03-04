@@ -2,7 +2,7 @@
 <div class="froyo-cart">
   <h2>Your Froyo</h2>
   <ul>
-    <li v-for="item in cart" :key="item.flavor">{{ item.flavor }} — ${{ item.cost.toFixed(2) }}</li>
+    <h2 v-for="item in cart" :key="item.flavor">{{ item.flavor }} — ${{ item.cost.toFixed(2) }}</h2>
   </ul>
   <p>Total: ${{ totalCost.toFixed(2) }}</p>
 </div>

@@ -1,7 +1,7 @@
 <template>
     <div>
         <h2>{{ froyo.flavor }}</h2>
-        <h3>${{ froyo.cost.toFixed(2) }}</h3>
+        <h3>${{ froyo.cost.toFixed(2)}}</h3>
         <slot></slot>
     </div>
 </template>
