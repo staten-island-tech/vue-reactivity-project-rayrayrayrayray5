@@ -11,18 +11,23 @@
     </FroyoCard>
   </div>
   <div class="froyo-cart">
-    <h1>Your Froyo</h1>
-    <ul>
-      <h2 v-for="item in cart" :key="item.flavor">
-        {{ item.flavor }} — ${{ item.cost.toFixed(2) }}
-      </h2>
-    </ul>
-    <h2>Total: ${{ totalCost.toFixed(2) }}</h2>
-    <img
-      class="aidenliu"
-      src="/aiden liu froyo bowl empty no background.png"
-      alt="aiden liu empty bowl"
-    />
+    <div class="cart-info">
+      <h1>Your Froyo</h1>
+      <ul>
+        <h2 v-for="item in cart" :key="item.flavor">
+          {{ item.flavor }} — ${{ item.cost.toFixed(2) }}
+        </h2>
+      </ul>
+      <h2>Total: ${{ totalCost.toFixed(2) }}</h2>
+    </div>
+    <div class="bowlstuff">
+      <img
+        class="aidenliu"
+        src="/aiden liu froyo bowl empty no background.png"
+        alt="aiden liu empty bowl"
+      />
+      <img class="aidenliufroyopics" v-for="(item, index) in cart" :key="index" :src="item.image" />
+    </div>
   </div>
 </template>
 
@@ -39,20 +44,20 @@ function addToFroyo(item) {
 }
 
 const flavorlist = ref([
-  { flavor: 'Chocolate', cost: 14.25, type: 'Flavor' },
-  { flavor: 'Vanilla', cost: 13.5, type: 'Flavor' },
-  { flavor: 'Strawberry', cost: 14.25, type: 'Flavor' },
-  { flavor: 'Mango', cost: 15.0, type: 'Flavor' },
-  { flavor: 'Cookies & Cream', cost: 15.75, type: 'Flavor' },
-  { flavor: 'Mint', cost: 14.25, type: 'Flavor' },
-  { flavor: 'Sprinkles', cost: 1.5, type: 'Topping' },
-  { flavor: 'Chocolate Chips', cost: 2.25, type: 'Topping' },
-  { flavor: 'Gummy Bears', cost: 2.1, type: 'Topping' },
-  { flavor: 'Marshmallows', cost: 1.95, type: 'Topping' },
-  { flavor: 'Strawberries', cost: 2.7, type: 'Topping' },
-  { flavor: 'Hot Fudge', cost: 2.55, type: 'Topping' },
-  { flavor: 'Whipped Cream', cost: 1.8, type: 'Topping' },
-  { flavor: 'Crushed Oreos', cost: 2.85, type: 'Topping' },
+  { flavor: 'Chocolate', cost: 14.25, type: 'Flavor', image: '/chocolate.png' },
+  { flavor: 'Vanilla', cost: 13.5, type: 'Flavor', image: '/vanilla.png' },
+  { flavor: 'Strawberry', cost: 14.25, type: 'Flavor', image: '/strawberry.png' },
+  { flavor: 'Mango', cost: 15.0, type: 'Flavor', image: 'mango.png' },
+  { flavor: 'Cookies & Cream', cost: 15.75, type: 'Flavor', image: 'cnc.png' },
+  { flavor: 'Mint', cost: 14.25, type: 'Flavor', image: 'mint.png' },
+  { flavor: 'Sprinkles', cost: 1.5, type: 'Topping', image: 'sprinkles.png' },
+  { flavor: 'Chocolate Chips', cost: 2.25, type: 'Topping', image: 'cookies.png' },
+  { flavor: 'Gummy Bears', cost: 2.1, type: 'Topping', image: 'gummy.png' },
+  { flavor: 'Marshmallows', cost: 1.95, type: 'Topping', image: 'marsh.png' },
+  { flavor: 'Strawberries', cost: 2.7, type: 'Topping', image: 'strawberries.png' },
+  { flavor: 'Hot Fudge', cost: 2.55, type: 'Topping', image: 'fudge.png' },
+  { flavor: 'Whipped Cream', cost: 1.8, type: 'Topping', image: 'cream.png' },
+  { flavor: 'Oreos', cost: 2.85, type: 'Topping', image: 'oreo.png' },
 ])
 </script>
 
@@ -77,13 +82,25 @@ h1 {
 button {
   background-color: beige;
 }
+.froyo-cart {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
 
-.aidenliu {
+.cart-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.bowlstuff {
+  position: relative;
+  width: 500px;
+}
+.aidenliufroyopics {
   position: absolute;
-  top: 89%;
-  right: 20%;
-  width: 800px;
-  height: auto;
-  padding-bottom: 20px;
+  top: 18%;
+  left: 0%;
+  width: 710px;
 }
 </style>
