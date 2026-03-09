@@ -1,32 +1,39 @@
 <template>
-  <h1>Aiden Liu's Ripoff Froyo Shop</h1>
-  <div class="container">
-    <FroyoCard
-      @click="addToFroyo(froyo)"
-      v-for="froyo in flavorlist"
-      :key="froyo.flavor"
-      :froyo="froyo"
-    >
-      <button>Add To Froyo</button>
-    </FroyoCard>
-  </div>
-  <div class="froyo-cart">
-    <div class="cart-info">
-      <h1>Your Froyo</h1>
-      <ul>
-        <h2 v-for="item in cart" :key="item.flavor">
-          {{ item.flavor }} — ${{ item.cost.toFixed(2) }}
-        </h2>
-      </ul>
-      <h2>Total: ${{ totalCost.toFixed(2) }}</h2>
+  <div class="aidenliupage">
+    <h1>Aiden Liu's Ripoff Froyo Shop</h1>
+    <div class="container">
+      <FroyoCard
+        @click="addToFroyo(froyo)"
+        v-for="froyo in flavorlist"
+        :key="froyo.flavor"
+        :froyo="froyo"
+      >
+        <button>Add To Froyo</button>
+      </FroyoCard>
     </div>
-    <div class="bowlstuff">
-      <img
-        class="aidenliu"
-        src="/aiden liu froyo bowl empty no background.png"
-        alt="aiden liu empty bowl"
-      />
-      <img class="aidenliufroyopics" v-for="(item, index) in cart" :key="index" :src="item.image" />
+    <div class="froyoCart">
+      <div class="cartInfo">
+        <h1>Your Froyo</h1>
+        <ul>
+          <h2 v-for="item in cart" :key="item.flavor">
+            {{ item.flavor }} — ${{ item.cost.toFixed(2) }}
+          </h2>
+        </ul>
+        <h2>Total: ${{ totalCost.toFixed(2) }}</h2>
+      </div>
+      <div class="bowlstuff">
+        <img
+          class="aidenliu"
+          src="/aiden liu froyo bowl empty no background.png"
+          alt="aiden liu empty bowl"
+        />
+        <img
+          class="aidenliufroyopics"
+          v-for="(item, index) in cart"
+          :key="index"
+          :src="item.image"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -62,6 +69,9 @@ const flavorlist = ref([
 </script>
 
 <style scoped>
+.aidenliupage {
+  background-color: rgb(249, 233, 210);
+}
 div {
   padding: 16px;
 }
@@ -82,15 +92,17 @@ h1 {
 button {
   background-color: beige;
 }
-.froyo-cart {
+.froyoCart {
   display: flex;
   justify-content: center;
   align-items: flex-start;
 }
 
-.cart-info {
+.cartInfo {
   display: flex;
   flex-direction: column;
+  background-color: rgb(255, 220, 155);
+  padding: 100px;
 }
 
 .bowlstuff {
@@ -100,7 +112,7 @@ button {
 .aidenliufroyopics {
   position: absolute;
   top: 18%;
-  left: 0%;
+  left: -2%;
   width: 710px;
 }
 </style>
